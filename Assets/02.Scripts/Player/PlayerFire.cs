@@ -6,9 +6,13 @@ public class PlayerFire : MonoBehaviour
     // 필요 속성
     // - 총알 프리팹
     public GameObject BulletPrefab;
+    public GameObject LittleBulletPrefab;
     // - 생성 위치(총구)
     public Transform RightFirePoint;
     public Transform LeftFirePoint;
+    
+    public Transform LittleRightFirePoint;
+    public Transform LittleLeftFirePoint;
 
     public bool canFire = true;
     public float coolTime = 1f;
@@ -33,6 +37,13 @@ public class PlayerFire : MonoBehaviour
             
                 GameObject autoLeftBullet = Instantiate(BulletPrefab);
                 autoLeftBullet.transform.position = LeftFirePoint.position;
+                
+                GameObject autoLittleRightBullet = Instantiate(LittleBulletPrefab);
+                autoLittleRightBullet.transform.position = LittleRightFirePoint.position;
+                
+                GameObject autoLittleLeftBullet = Instantiate(LittleBulletPrefab);
+                autoLittleLeftBullet.transform.position = LittleLeftFirePoint.position;
+                
                 canFire = false;
             }
             else
@@ -46,6 +57,13 @@ public class PlayerFire : MonoBehaviour
             
                     GameObject leftBullet = Instantiate(BulletPrefab);
                     leftBullet.transform.position = LeftFirePoint.position;
+                    
+                    GameObject littleRightBullet = Instantiate(LittleBulletPrefab);
+                    littleRightBullet.transform.position = LittleRightFirePoint.position;
+                    
+                    GameObject littleLeftBullet = Instantiate(LittleBulletPrefab);
+                    littleLeftBullet.transform.position = LittleLeftFirePoint.position;
+                    
                     canFire = false;
                 }
             }
