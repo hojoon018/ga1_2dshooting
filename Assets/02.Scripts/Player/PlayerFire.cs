@@ -9,18 +9,45 @@ public class PlayerFire : MonoBehaviour
     // - 생성 위치(총구)
     public Transform RightFirePoint;
     public Transform LeftFirePoint;
+
+    public bool canFire = true;
+    public float coolTime = 1f;
+
+    private float currentCoolTime = 1f;
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        CheckCoolTime(Time.deltaTime);
+        if (canFire)
         {
-            // 2. 총알 프리팹을 생성한다.
-            // Instantiate는 프리팹으로부터 복사해서 (Monobehaviour를 상속받는) 게임 오브젝트를 생성하고 씬에 넣어주는 기능
-            GameObject rightBullet = Instantiate(BulletPrefab);
-            rightBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 나(플레이어)의 위치로
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // 2. 총알 프리팹을 생성한다.
+                // Instantiate는 프리팹으로부터 복사해서 (Monobehaviour를 상속받는) 게임 오브젝트를 생성하고 씬에 넣어주는 기능
+                GameObject rightBullet = Instantiate(BulletPrefab);
+                rightBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 나(플레이어)의 위치로
             
-            GameObject leftBullet = Instantiate(BulletPrefab);
-            leftBullet.transform.position = LeftFirePoint.position;
+                GameObject leftBullet = Instantiate(BulletPrefab);
+                leftBullet.transform.position = LeftFirePoint.position;
+                canFire = false;
+            }
+        }
+        
+    }
+
+    private void CheckCoolTime(float deltaTime)
+    {
+        if (canFire == true)
+        {
+            return;
+        }
+        
+        currentCoolTime -= deltaTime;
+        
+        if (currentCoolTime <= 0)
+        {
+            canFire = true;
+            currentCoolTime = coolTime;
         }
     }
 }
