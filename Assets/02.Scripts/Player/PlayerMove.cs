@@ -19,11 +19,9 @@ public class PlayerMove : MonoBehaviour
     // 초당 프레임 실행 횟수는 : 별다른 설정이 없을 경우 가능한 많이
     private void Update()
     {
-        // deltaTime : 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
         Move();
         SpeedChange();
         
-
     }
 
     private void SpeedChange()
