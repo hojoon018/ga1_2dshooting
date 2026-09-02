@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -19,8 +20,24 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         // deltaTime : 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
+        Move();
+        SpeedChange();
+        
 
+    }
 
+    private void SpeedChange()
+    {
+        // 6. Q/E 키 눌렀을 때 속도 증가,감소
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Speed++;
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            Speed--;
+        }
     }
 
     private void Move()
