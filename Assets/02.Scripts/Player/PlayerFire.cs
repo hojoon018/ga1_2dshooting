@@ -15,13 +15,23 @@ public class PlayerFire : MonoBehaviour
     public Transform LittleLeftFirePoint;
 
     public bool canFire = true;
-    public float coolTime = 1f;
+    
+    public float coolTime = 0.6f;
+    private float currentCoolTime;
 
     public bool isAutoFire = false;
 
-    private float currentCoolTime = 1f;
+    private void Start()
+    {
+        currentCoolTime = coolTime;
+    }
     
     private void Update()
+    {
+        Fire();
+    }
+
+    private void Fire()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -68,9 +78,8 @@ public class PlayerFire : MonoBehaviour
                 }
             }
         }
-        
     }
-
+    
     private void CheckCoolTime(float deltaTime)
     {
         if (canFire == true)
