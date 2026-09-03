@@ -27,7 +27,7 @@ public class PlayerFire : MonoBehaviour
 
     private void Start()
     {
-        currentCoolTime = coolTime;
+        _currentCoolTime = coolTime;
     }
 
     private void Update()
@@ -92,12 +92,12 @@ public class PlayerFire : MonoBehaviour
             return;
         }
 
-        currentCoolTime -= deltaTime;
+        _currentCoolTime -= deltaTime;
 
-        if (currentCoolTime <= 0)
+        if (_currentCoolTime <= 0)
         {
             canFire = true;
-            currentCoolTime = coolTime;
+            _currentCoolTime = coolTime;
         }
     }
 }
