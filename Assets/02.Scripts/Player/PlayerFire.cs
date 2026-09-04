@@ -20,6 +20,7 @@ public class PlayerFire : MonoBehaviour
 
     public float coolTime = 0.6f;
     private float _currentCoolTime;
+    private float _decreaseCoolTime = 0.01f;
 
     public bool isAutoFire = false;
 
@@ -97,5 +98,10 @@ public class PlayerFire : MonoBehaviour
             canFire = true;
             _currentCoolTime = coolTime;
         }
+    }
+
+    public void DecreaseCoolTime()
+    {
+        coolTime -= _decreaseCoolTime;
     }
 }

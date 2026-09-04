@@ -1,15 +1,14 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpeedItem : Item
+public class AttackSpeedItem : Item
 {
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerMove playerMove = other.GetComponent<PlayerMove>();
+            PlayerFire player = other.GetComponent<PlayerFire>();
 
-            playerMove.SpeedUp();
+            player.DecreaseCoolTime();
             Destroy(gameObject);
         }
     }
