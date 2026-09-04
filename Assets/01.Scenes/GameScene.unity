@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 1459725669}
   - component: {fileID: 1459725668}
   - component: {fileID: 1459725671}
+  - component: {fileID: 1459725674}
   - component: {fileID: 1459725672}
   - component: {fileID: 1459725673}
   m_Layer: 6
@@ -538,7 +539,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -586,6 +587,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1459725674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459725667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d1d4908da7aeb543a428f7c72d545b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
+  _playerHealth: 100
 --- !u!1001 &1612377194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -596,6 +610,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857292158778892284, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 7129883477215043617, guid: c45d465a87436f440b43da182f5f592c, type: 3}
+    - target: {fileID: 857292158778892284, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _downwardEnemyPrefab
       value: 
       objectReference: {fileID: 7129883477215043617, guid: c45d465a87436f440b43da182f5f592c, type: 3}
     - target: {fileID: 1099808453390580694, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
@@ -721,6 +739,10 @@ PrefabInstance:
       propertyPath: _enemyPrefab
       value: 
       objectReference: {fileID: 3620828797670932378, guid: fdca7a8f10a41cd498d5711b6c44da88, type: 3}
+    - target: {fileID: 857292158778892284, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _downwardEnemyPrefab
+      value: 
+      objectReference: {fileID: 3620828797670932378, guid: fdca7a8f10a41cd498d5711b6c44da88, type: 3}
     - target: {fileID: 1099808453390580694, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -811,6 +833,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 857292158778892284, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _enemyPrefab
+      value: 
+      objectReference: {fileID: 4014502211582060569, guid: 8b3167985a0b79542aa498963a2d3f1d, type: 3}
+    - target: {fileID: 857292158778892284, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _downwardEnemyPrefab
       value: 
       objectReference: {fileID: 4014502211582060569, guid: 8b3167985a0b79542aa498963a2d3f1d, type: 3}
     - target: {fileID: 1099808453390580694, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
