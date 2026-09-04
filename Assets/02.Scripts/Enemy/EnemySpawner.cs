@@ -9,9 +9,8 @@ public class EnemySpawner : MonoBehaviour
     private float _timer;
 
     // - 생성할 프리팹
-    [Header("스폰할 적 프리팹")][SerializeField] private Enemy _downwardEnemyPrefab;
-    [SerializeField] private Enemy _aimedEnemyPrefab;
-    [SerializeField] private Enemy _homingEnemyPrefab;
+    [Header("스폰할 적 프리팹")][SerializeField] private Enemy[] _enemyPrefabs;
+
 
     private void Update()
     {
@@ -29,21 +28,28 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
-        float randomRange = Random.Range(0f, 99f);
-        if (randomRange < 50f)
+        // 각 스포너가 적을 스폰할 때 확률에 따라 다른 타입의 적을 스폰해주세요.
+
+        int enemyPrefabIndex = 0;
+        int randomPercent = Random.Range(0, 100);
+
+        // Todo: Sciptable Object를 사용해서 리팩토링
+        // 이유 1 : 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알 수가 없음
+        // 이유 2 : 각 에너미 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵다.
+        if (randomPercent < 50)
         {
-            Enemy downwardEnemy = Instantiate(_downwardEnemyPrefab);
-            downwardEnemy.transform.position = transform.position;
+            enemyPrefabIndex = 0;
         }
-        else if (randomRange < 80f)
+        else if (randomPercent < 80)
         {
-            Enemy _aimedEnemy = Instantiate(_aimedEnemyPrefab);
-            _aimedEnemy.transform.position = transform.position;
+            enemyPrefabIndex = 1;
         }
-        else if (randomRange < 99f)
+        else
         {
-            Enemy _homingEnemy = Instantiate(_homingEnemyPrefab);
-            _homingEnemy.transform.position = transform.position;
+            enemyPrefabIndex = 2;
         }
+
+        Enemy enemy = Instantiate(_enemyPrefabs[enemyPrefabIndex]);
+        enemy.transform.position = transform.position;
     }
 }
