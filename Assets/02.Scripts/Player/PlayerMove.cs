@@ -37,6 +37,11 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void SpeedUp()
+    {
+        Speed++;
+    }
+
     private void Move()
     {
         // 1. 키보드 입력을 받는다.
