@@ -23,8 +23,6 @@ public class PlayerFire : MonoBehaviour
 
     public bool isAutoFire = false;
 
-    private bool _test = false;
-
     private void Start()
     {
         _currentCoolTime = coolTime;
