@@ -20,6 +20,8 @@ public class EnemySpawner : MonoBehaviour
         {
             _timer = 0;
 
+            _spawnInterval = Random.Range(1f, 3f); // float : 1 ~ 3까지 랜덤  // int : 1 ~ 2
+
             Spawn();
         }
     }
