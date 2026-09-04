@@ -181,3 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TargetRotateEnemy
   _health: 100
   _moveSpeed: 3
+  _damage: 30

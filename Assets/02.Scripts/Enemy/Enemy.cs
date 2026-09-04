@@ -4,6 +4,7 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed;
+    [SerializeField] private float _damage;
 
 
     public void Update()
@@ -21,6 +22,17 @@ public abstract class Enemy : MonoBehaviour
         {
             // 너 죽자
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Destroy(this.gameObject);
+            PlayerStatus player = other.gameObject.GetComponent<PlayerStatus>();
+
+            player.TakeDamage(_damage);
         }
     }
 }
