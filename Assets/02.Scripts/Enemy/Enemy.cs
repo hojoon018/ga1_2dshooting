@@ -6,6 +6,7 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed;
     [SerializeField] private float _damage;
 
+    [Header("스폰할 아이템 프리팹")][SerializeField]private Item[] _itemPrefabs;
 
     public void Update()
     {
@@ -21,6 +22,7 @@ public abstract class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             // 너 죽자
+            ItemSpawn();
             Destroy(gameObject);
         }
     }
@@ -41,4 +43,17 @@ public abstract class Enemy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void ItemSpawn()
+    {
+        int randomPercent = Random.Range(0, 100);
+
+        if (randomPercent < 30)
+        {
+            int itemPrefabIndex = Random.Range(0, 3);;
+            Item item = Instantiate(_itemPrefabs[itemPrefabIndex]);
+            item.transform.position = transform.position;
+        }
+    }
+    
 }

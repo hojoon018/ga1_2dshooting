@@ -182,3 +182,7 @@ MonoBehaviour:
   _health: 100
   _moveSpeed: 2
   _damage: 20
+  _itemPrefabs:
+  - {fileID: 242514977576763788, guid: 22bcb833c0ab14c46b9cd61d8bb9ec25, type: 3}
+  - {fileID: 2287209720453674980, guid: 69be6200348b81440b24b26bff886347, type: 3}
+  - {fileID: 4604641678941666473, guid: bfc4a3c27b9bc2a42bd7c079e78bd985, type: 3}
