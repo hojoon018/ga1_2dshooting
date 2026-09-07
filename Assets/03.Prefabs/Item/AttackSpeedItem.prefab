@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3859543010535628311}
   - component: {fileID: 6245475817458245901}
   - component: {fileID: 242514977576763788}
-  - component: {fileID: 8326687975577243843}
+  - component: {fileID: 8582659388941306655}
   m_Layer: 10
   m_Name: AttackSpeedItem
   m_TagString: Untagged
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackSpeedItem
   _speed: 7
---- !u!95 &8326687975577243843
+--- !u!95 &8582659388941306655
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

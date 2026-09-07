@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6541654338133177624}
   - component: {fileID: 235984064958476315}
   - component: {fileID: 2287209720453674980}
-  - component: {fileID: 1546181826104648491}
+  - component: {fileID: 5877312729030488974}
   m_Layer: 10
   m_Name: HealthItem
   m_TagString: Untagged
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthItem
   _speed: 7
---- !u!95 &1546181826104648491
+--- !u!95 &5877312729030488974
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

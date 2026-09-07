@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5523740238833187530}
   - component: {fileID: 2022352811147975669}
   - component: {fileID: 4604641678941666473}
-  - component: {fileID: 4520285013066284770}
+  - component: {fileID: 7474760997003009059}
   m_Layer: 10
   m_Name: SpeedItem
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeedItem
   _speed: 7
---- !u!95 &4520285013066284770
+--- !u!95 &7474760997003009059
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

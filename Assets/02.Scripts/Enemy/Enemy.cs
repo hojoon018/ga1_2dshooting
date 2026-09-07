@@ -7,6 +7,12 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float _damage;
 
     [Header("스폰할 아이템 프리팹")][SerializeField] private Item[] _itemPrefabs;
+    [SerializeField] private Animator _animator;
+
+    private void Awake()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public void Update()
     {
@@ -19,6 +25,10 @@ public abstract class Enemy : MonoBehaviour
     {
         _health -= damage;
 
+        if (_animator != null)
+        {
+            _animator.SetTrigger("hit");
+        }
         if (_health <= 0)
         {
             // 너 죽자
