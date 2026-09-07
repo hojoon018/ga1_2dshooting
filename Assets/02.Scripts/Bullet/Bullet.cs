@@ -17,11 +17,10 @@ public class Bullet : MonoBehaviour
     // 트리거 관련 이벤트
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(this.gameObject);
-
         // 충돌한 친구가 Enemy일때만 죽여버리자!
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Destroy(this.gameObject);
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
 
