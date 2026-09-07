@@ -958,6 +958,7 @@ GameObject:
   - component: {fileID: 1459725674}
   - component: {fileID: 1459725672}
   - component: {fileID: 1459725673}
+  - component: {fileID: 1459725675}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -977,6 +978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 224d269f91647f044a88fa07433edb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  _animator: {fileID: 1459725675}
   Speed: 3
   maxPositionY: 0
   minPositionY: -5
@@ -1172,6 +1174,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
   _playerHealth: 100
+--- !u!95 &1459725675
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459725667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 69ead3981a8d9554a8bd9b52fd59e4ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1550731468
 GameObject:
   m_ObjectHideFlags: 0
