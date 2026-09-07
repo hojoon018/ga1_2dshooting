@@ -21,6 +21,7 @@ public class PlayerMove : MonoBehaviour
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
         _animator = GetComponent<Animator>();
     }
+
     // 매 프레임마다 실행된다.
     // 초당 프레임 실행 횟수는 : 별다른 설정이 없을 경우 가능한 많이
     private void Update()
@@ -58,8 +59,10 @@ public class PlayerMove : MonoBehaviour
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 타입이 있다. 벡터는(크기와 방향을 의미한다)
         Vector2 normalizedDirection = new Vector2(h, v).normalized; // 왼쪽 방향
+
         // Vector2 direction = Vector2.left;
         _animator.SetInteger("x", (int)normalizedDirection.x);
+
         // 3. 방향과 속도에 따라 이동한다.
         Vector2 newPosition = transform.position + (Vector3)normalizedDirection * Speed * Time.deltaTime;
 
