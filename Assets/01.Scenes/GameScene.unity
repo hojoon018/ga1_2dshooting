@@ -1131,6 +1131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   _animator: {fileID: 1459725675}
   _speed: 3
+  _righttrailRenderer: {fileID: 1198381739}
+  _lefttrailRenderer: {fileID: 1685580836}
   maxPositionY: 0
   minPositionY: -5
   maxPositionX: 2.36
