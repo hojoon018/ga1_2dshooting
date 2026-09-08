@@ -8,6 +8,8 @@ public class PlayerMove : MonoBehaviour
     // 필요 필드:
     [SerializeField] private Animator _animator;
     public float _speed;
+    [SerializeField] private TrailRenderer _righttrailRenderer;
+    [SerializeField] private TrailRenderer _lefttrailRenderer;
 
     public float Speed => _speed;
 
@@ -83,10 +85,20 @@ public class PlayerMove : MonoBehaviour
         if (newPosition.x > maxPositionX)
         {
             newPosition.x = minPositionX;
+            transform.position = newPosition;
+            _righttrailRenderer.transform.localPosition = new Vector3(0.2f, -0.5f, 0f);
+            _lefttrailRenderer.transform.localPosition = new Vector3(-0.2f, -0.5f, 0f);
+            _righttrailRenderer.Clear();
+            _lefttrailRenderer.Clear();
         }
         else if (newPosition.x < minPositionX)
         {
             newPosition.x = maxPositionX;
+            transform.position = newPosition;
+            _righttrailRenderer.transform.localPosition = new Vector3(0.2f, -0.5f, 0f);
+            _lefttrailRenderer.transform.localPosition = new Vector3(-0.2f, -0.5f, 0f);
+            _righttrailRenderer.Clear();
+            _lefttrailRenderer.Clear();
         }
 
         transform.position = newPosition;
