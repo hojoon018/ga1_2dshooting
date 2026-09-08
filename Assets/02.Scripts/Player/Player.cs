@@ -36,4 +36,9 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Heal(float healAmount)
+    {
+        _playerHealth += healAmount;
+    }
 }
