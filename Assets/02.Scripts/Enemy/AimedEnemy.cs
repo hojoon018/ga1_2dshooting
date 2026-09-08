@@ -17,8 +17,10 @@ public class AimedEnemy : Enemy
 
         _direction = _player.transform.position - transform.position;
         _direction.Normalize();
+        float radian = Mathf.Atan2(_direction.y, _direction.x);
+        float degree = radian * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, degree + 90f);
     }
-
     protected override void Move()
     {
         if (_player == null)
@@ -27,6 +29,6 @@ public class AimedEnemy : Enemy
         }
 
         // 방향과 속도에 맞게 이동한다.
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        transform.Translate(Vector2.down * _moveSpeed * Time.deltaTime);
     }
 }

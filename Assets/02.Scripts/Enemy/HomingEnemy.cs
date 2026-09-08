@@ -21,6 +21,9 @@ public class HomingEnemy : Enemy
         // 1. 방향을 구한다.
         Vector2 direction = _player.transform.position - transform.position;
         direction.Normalize();
+        float radian = Mathf.Atan2(direction.y, direction.x);
+        float angle = radian * Mathf.Rad2Deg + 90;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         // 2. 방향과 속도에 맞게 이동한다.
         transform.Translate(direction * _moveSpeed * Time.deltaTime);
