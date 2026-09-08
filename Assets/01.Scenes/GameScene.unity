@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   _animator: {fileID: 1459725675}
-  Speed: 3
+  _speed: 3
   maxPositionY: 0
   minPositionY: -5
   maxPositionX: 2.36
