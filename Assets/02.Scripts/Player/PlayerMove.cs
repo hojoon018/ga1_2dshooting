@@ -7,7 +7,9 @@ public class PlayerMove : MonoBehaviour
 
     // 필요 필드:
     [SerializeField] private Animator _animator;
-    public float Speed;
+    public float _speed;
+
+    public float Speed => _speed;
 
     public float maxPositionY;
     public float minPositionY;
@@ -36,17 +38,17 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Speed++;
+            _speed++;
         }
         else if (Input.GetKeyUp(KeyCode.Q))
         {
-            Speed--;
+            _speed--;
         }
     }
 
     public void SpeedUp()
     {
-        Speed++;
+        _speed++;
     }
 
     private void Move()
@@ -64,7 +66,7 @@ public class PlayerMove : MonoBehaviour
         _animator.SetInteger("x", (int)normalizedDirection.x);
 
         // 3. 방향과 속도에 따라 이동한다.
-        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * Speed * Time.deltaTime;
+        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * _speed * Time.deltaTime;
 
         // 4. 위치 y에 제한이 있다.
         if (newPosition.y > maxPositionY)

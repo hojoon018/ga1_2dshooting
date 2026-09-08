@@ -9,6 +9,7 @@ public class AttackSpeedItem : Item
             PlayerFire player = other.GetComponent<PlayerFire>();
 
             player.DecreaseCoolTime();
+            Debug.Log($"플레이어 공격 속도: {player.CoolTime}");
             Destroy(gameObject);
         }
     }

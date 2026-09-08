@@ -11,6 +11,7 @@ public class HealthItem : Item
             Player player = other.GetComponent<Player>();
 
             player.TakeDamage(_healthRecover);
+            Debug.Log($"플레이어 체력: {player.PlayerHealth}");
             Destroy(gameObject);
         }
     }
