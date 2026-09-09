@@ -4,6 +4,15 @@ public class Bomb : MonoBehaviour
 {
     private float _bombTime = 3f;
     private float _bombTimer = 0f;
+    CameraShake _cameraShake;
+
+    [SerializeField] private GameObject _bombEndEffect;
+
+    private void Start()
+    {
+        _cameraShake = GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>();
+        _cameraShake.VibrateForTime(_bombTime);
+    }
 
     private void Update()
     {
@@ -12,6 +21,7 @@ public class Bomb : MonoBehaviour
         if (_bombTimer >= _bombTime)
         {
             Destroy(gameObject);
+            Instantiate(_bombEndEffect, transform.position, Quaternion.identity);
         }
     }
 
