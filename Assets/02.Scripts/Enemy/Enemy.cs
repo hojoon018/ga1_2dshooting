@@ -7,13 +7,19 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float _damage;
 
     [Header("스폰할 아이템 프리팹")][SerializeField] private Item[] _itemPrefabs;
-    [SerializeField] private Animator _animator;
+
+    private Animator _animator;
+    private AudioSource _audioSource;
+
+    // Todo : 에너미가 공격 당할 때 재생시켜주는 피격사운드
+
     // - 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -27,10 +33,16 @@ public abstract class Enemy : MonoBehaviour
     {
         _health -= damage;
 
+        if (_health >= 0)
+        {
+            _audioSource.Play();
+        }
+
         if (_animator != null)
         {
             _animator.SetTrigger("hit");
         }
+
         if (_health <= 0)
         {
             // 너 죽자
