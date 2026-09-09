@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6790d39308596564aa9247149f807c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DownWardEnemy
-  _health: 100
+  _health: 80
   _moveSpeed: 6
   _damage: 30
   _itemPrefabs:
