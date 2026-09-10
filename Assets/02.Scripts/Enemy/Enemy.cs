@@ -83,7 +83,7 @@ public abstract class Enemy : MonoBehaviour
 
         if (randomPercent < 30)
         {
-            int itemPrefabIndex = Random.Range(0, 3);
+            int itemPrefabIndex = Random.Range(0, 2);
             Item item = Instantiate(_itemPrefabs[itemPrefabIndex]);
             item.transform.position = transform.position;
         }

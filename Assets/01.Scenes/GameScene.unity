@@ -1600,6 +1600,7 @@ GameObject:
   - component: {fileID: 1459725671}
   - component: {fileID: 1459725674}
   - component: {fileID: 1459725676}
+  - component: {fileID: 1459725678}
   - component: {fileID: 1459725672}
   - component: {fileID: 1459725673}
   - component: {fileID: 1459725675}
@@ -1618,7 +1619,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459725667}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 224d269f91647f044a88fa07433edb33, type: 3}
   m_Name: 
@@ -1731,7 +1732,7 @@ MonoBehaviour:
   LittleLeftFirePoint: {fileID: 1873958902}
   canFire: 1
   coolTime: 0.5
-  isAutoFire: 0
+  isAutoFire: 1
 --- !u!60 &1459725672
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1957,6 +1958,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1459725678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1459725667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4f5dcee57c0854abdc9bf246d8c3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAutoMove
+  _speed: 3
 --- !u!1 &1550731468
 GameObject:
   m_ObjectHideFlags: 0
