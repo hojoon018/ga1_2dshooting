@@ -1466,7 +1466,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf7a5ec6552e88148b222f0774e8789a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  _bulletPrefab: {fileID: 5239794449467348472, guid: 247d2b34128d8d840a5860003e149bac, type: 3}
+  _bulletPrefabs:
+  - {fileID: 5239794449467348472, guid: 247d2b34128d8d840a5860003e149bac, type: 3}
+  - {fileID: -9198062043332368716, guid: d29846577b6893c4ab9f7da2dae68b16, type: 3}
   _poolSize: 50
 --- !u!4 &993353139
 Transform:
@@ -2137,6 +2139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
   RightFirePoint: {fileID: 1661306184}
   LeftFirePoint: {fileID: 787388603}
+  LittleRightFirePoint: {fileID: 1735926126}
+  LittleLeftFirePoint: {fileID: 1873958902}
   canFire: 1
   coolTime: 0.5
   isAutoFire: 1

@@ -5,6 +5,9 @@ public class Bullet : MonoBehaviour
     private AudioSource _audioSource;
     // 목적 : 총알을 위로 움직이고 싶다.
 
+    [SerializeField] private BulletType _type;
+    public BulletType Type => _type;
+
     public float MoveSpeed;
 
     public float BulletDamage = 40;

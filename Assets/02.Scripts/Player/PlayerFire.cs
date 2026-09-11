@@ -10,6 +10,9 @@ public class PlayerFire : MonoBehaviour
     public Transform RightFirePoint;
     public Transform LeftFirePoint;
 
+    public Transform LittleRightFirePoint;
+    public Transform LittleLeftFirePoint;
+
     public bool canFire = true;
 
     public float coolTime = 0.6f;
@@ -44,11 +47,17 @@ public class PlayerFire : MonoBehaviour
         {
             if (isAutoFire)
             {
-                Bullet autoRightBullet = BulletPool.Instance.GetBullet();
+                Bullet autoRightBullet = BulletPool.Instance.GetBullet(BulletType.Main);
                 autoRightBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 나(플레이어)의 위치로
 
-                Bullet autoLeftBullet = BulletPool.Instance.GetBullet();
+                Bullet autoLeftBullet = BulletPool.Instance.GetBullet(BulletType.Main);
                 autoLeftBullet.transform.position = LeftFirePoint.position;
+
+                Bullet autoLittleRightBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
+                autoLittleRightBullet.transform.position = LittleRightFirePoint.position;
+
+                Bullet autoLittleLeftBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
+                autoLittleLeftBullet.transform.position = LittleLeftFirePoint.position;
 
                 canFire = false;
             }
@@ -58,11 +67,17 @@ public class PlayerFire : MonoBehaviour
                 {
                     // 2. 총알 프리팹을 생성한다.
                     // Instantiate는 프리팹으로부터 복사해서 (Monobehaviour를 상속받는) 게임 오브젝트를 생성하고 씬에 넣어주는 기능
-                    Bullet rightBullet = BulletPool.Instance.GetBullet();
+                    Bullet rightBullet = BulletPool.Instance.GetBullet(BulletType.Main);
                     rightBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 나(플레이어)의 위치로
 
-                    Bullet leftBullet = BulletPool.Instance.GetBullet();
+                    Bullet leftBullet = BulletPool.Instance.GetBullet(BulletType.Main);
                     leftBullet.transform.position = LeftFirePoint.position;
+
+                    Bullet LittleRightBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
+                    LittleRightBullet.transform.position = LittleRightFirePoint.position;
+
+                    Bullet LittleLeftBullet = BulletPool.Instance.GetBullet(BulletType.Sub);
+                    LittleLeftBullet.transform.position = LittleLeftFirePoint.position;
 
                     canFire = false;
                 }
