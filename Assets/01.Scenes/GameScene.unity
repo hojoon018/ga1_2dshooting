@@ -2580,6 +2580,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3027,6 +3031,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3164,12 +3172,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4442203419963633845, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: m_Name
-      value: EnemySpawner
+      value: EnemySpawner_Center
       objectReference: {fileID: 0}
     - target: {fileID: 4442203419963633845, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _spawnDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
