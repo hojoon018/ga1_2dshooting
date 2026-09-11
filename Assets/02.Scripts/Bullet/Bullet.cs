@@ -12,6 +12,19 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
+    }
+
+    public void OnSpawn()
+    {
+        // 프리팹이 풀에 의해서 활성화 될때마다
+        // 초기화 하는 코드들이 들어간다.
+
+        PlaySound();
+    }
+
+    // 활성화 될때마다
+    private void PlaySound()
+    {
         _audioSource.pitch = UnityEngine.Random.Range(1f, 3f);
         _audioSource.Play();
     }
@@ -28,10 +41,12 @@ public class Bullet : MonoBehaviour
         // 충돌한 친구가 Enemy일때만 죽여버리자!
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(this.gameObject);
+            // 나죽고!
+            // Destroy(this.gameObject);
+            gameObject.SetActive(false); // 비활성화
+
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-
 
             // 응집도는 높히고, 결합도는 낮춰라
             // 결합도는 묻는거.. 매번 묻는거..
