@@ -196,6 +196,7 @@ MonoBehaviour:
   - {fileID: 242514977576763788, guid: 22bcb833c0ab14c46b9cd61d8bb9ec25, type: 3}
   - {fileID: 2287209720453674980, guid: 69be6200348b81440b24b26bff886347, type: 3}
   _deathEffectPrefab: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
+  _spawnDataTable: {fileID: 11400000, guid: 8f10400ea069fc043a1764fbb4172a52, type: 2}
 --- !u!95 &4494112095324670226
 Animator:
   serializedVersion: 7

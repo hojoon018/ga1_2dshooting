@@ -31,7 +31,6 @@ public class EnemySpawner : MonoBehaviour
     {
         // 각 스포너가 적을 스폰할 때 확률에 따라 다른 타입의 적을 스폰해주세요.
 
-        // Todo: Sciptable Object를 사용해서 리팩토링
         // 이유 1 : 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알 수가 없음
         // 이유 2 : 각 에너미 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵다.
 

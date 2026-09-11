@@ -6,7 +6,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed;
     [SerializeField] private float _damage;
 
-    [Header("스폰할 아이템 프리팹")][SerializeField] private Item[] _itemPrefabs;
+    [Header("스폰할 아이템 프리팹")]
+    [SerializeField] private Item[] _itemPrefabs;
 
     private Animator _animator;
     private AudioSource _audioSource;
@@ -15,6 +16,8 @@ public abstract class Enemy : MonoBehaviour
 
     // - 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
+
+    [SerializeField] private ItemSpawnDataTableSO _spawnDataTable;
 
     private void Awake()
     {
@@ -85,9 +88,26 @@ public abstract class Enemy : MonoBehaviour
 
         if (randomPercent < 30)
         {
-            int itemPrefabIndex = Random.Range(0, 2);
-            Item item = Instantiate(_itemPrefabs[itemPrefabIndex]);
-            item.transform.position = transform.position;
+            int totalWeight = 0;
+            foreach (ItemSpawnData spawnData in _spawnDataTable.Datas)
+            {
+                totalWeight += spawnData.Weight;
+            }
+
+            int randomWeight = Random.Range(0, totalWeight);
+
+            int cumulativeWeight = 0;
+
+            foreach (ItemSpawnData spawnData in _spawnDataTable.Datas)
+            {
+                cumulativeWeight += spawnData.Weight;
+                if (randomWeight < cumulativeWeight)
+                {
+                    GameObject item = Instantiate(spawnData.ItemPrefab);
+                    item.transform.position = transform.position;
+                    break;
+                }
+            }
         }
     }
 }
