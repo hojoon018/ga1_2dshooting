@@ -12,7 +12,6 @@ public abstract class Enemy : MonoBehaviour
     private Animator _animator;
     private AudioSource _audioSource;
 
-    // Todo : 에너미가 공격 당할 때 재생시켜주는 피격사운드
 
     // - 죽을 때 생성할 이펙트 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
@@ -81,7 +80,6 @@ public abstract class Enemy : MonoBehaviour
 
     private void SpawnItem()
     {
-        // Todo : Scriptable Object를 사용해서 리팩토링
         // 이유 1 : 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알 수가 없음
         // 이유 2: 각 아이템 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵
         int randomPercent = Random.Range(0, 100);
