@@ -21,7 +21,12 @@ public class PlayerFire : MonoBehaviour
 
     public float CoolTime => coolTime;
 
-    public bool isAutoFire = false;
+    private bool _isAutoFire = false;
+
+    public void SetAuto(bool auto)
+    {
+        _isAutoFire = auto;
+    }
 
     private void Start()
     {
@@ -39,13 +44,13 @@ public class PlayerFire : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            isAutoFire = !isAutoFire;
+            _isAutoFire = !_isAutoFire;
         }
 
         CheckCoolTime(Time.deltaTime);
         if (canFire)
         {
-            if (isAutoFire)
+            if (_isAutoFire)
             {
                 Bullet autoRightBullet = BulletPool.Instance.GetBullet(BulletType.Main);
                 autoRightBullet.transform.position = RightFirePoint.position; // 생성한 총알의 위치를 나(플레이어)의 위치로
