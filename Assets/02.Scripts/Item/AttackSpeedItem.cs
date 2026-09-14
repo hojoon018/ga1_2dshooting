@@ -3,6 +3,7 @@ using UnityEngine;
 public class AttackSpeedItem : Item
 {
     [SerializeField] private GameObject _getEffectPrefab;
+
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -12,7 +13,7 @@ public class AttackSpeedItem : Item
 
             player.DecreaseCoolTime();
             Debug.Log($"플레이어 공격 속도: {player.CoolTime}");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -5,6 +5,9 @@ public abstract class Item : MonoBehaviour
     private float _moveInterval = 4f;
     private float _timer;
 
+    [SerializeField] private ItemType _type;
+    public ItemType Type => _type;
+
     private GameObject _player;
 
     [SerializeField] private float _speed;

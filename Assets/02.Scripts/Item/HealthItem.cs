@@ -14,7 +14,7 @@ public class HealthItem : Item
 
             player.Heal(_healthRecover);
             Debug.Log($"플레이어 체력: {player.PlayerHealth}");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -1,0 +1,75 @@
+using UnityEngine;
+
+public class ItemPool : MonoBehaviour
+{
+    private static ItemPool _instance = null;
+
+    public static ItemPool Instance => _instance;
+    // 오브젝트 풀링이란 : 오브젝트의 Pool(웅덩이: 창고)을 만들어두고,
+    // 그 창고 안에 게임 오브젝트를 미리 필요한 만큼 만들어두고,
+    // 필요할 때마다 꺼내서 사용하고 필요가 없으면 반환하는 식으로
+    // 메모리 할당(객체의 생성)과 해제(파괴)를 최소화해서 성능 up!
+
+    // 필요 속성
+    [Header("아이템 프리팹들")]
+    [SerializeField] private Item[] _itemPrefabs;
+
+    [Header("풀 사이즈")]
+    [SerializeField] private int _poolSize = 20;
+
+    // 생성한 총알을 담아둘 풀
+    private Item[,] _pool;
+
+    private void Awake()
+    {
+        if (_instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        _instance = this;
+
+        // 창고를 창고 크기만큼 만든다.
+        _pool = new Item[_itemPrefabs.Length, _poolSize];
+
+        // 총알 프리팹 종류와 창고 크기만큼 총알을 미리 만들어서 집어 넣는다.
+        for (int i = 0; i < _itemPrefabs.Length; i++)
+        {
+            Item itemPrefab = _itemPrefabs[i];
+            {
+                for (int j = 0; j < _poolSize; j++)
+                {
+                    Item item = Instantiate(itemPrefab, gameObject.transform);
+                    item.gameObject.SetActive(false);
+                    _pool[i, j] = item;
+                }
+            }
+        }
+    }
+
+    public Item GetItem(ItemType itemType)
+    {
+        for (int i = 0; i < _pool.Length; i++) // 타입 별로 순회 하면서
+        {
+            if (_pool[i, 0].Type != itemType) // 첫번째 요소의 타입이 내가 원하는 게 아니라면 스킵
+            {
+                continue;
+            }
+
+            for (int j = 0; j < _poolSize; j++) // 원하는 타입의 배열 순회
+            {
+                Item item = _pool[i, j];
+
+                // 비활성화 되어있는 (즉, 누가 빌려가지 않은) 총알 반환
+                if (item.gameObject.activeSelf == false)
+                {
+                    item.gameObject.SetActive(true);
+                    return item;
+                }
+            }
+        }
+
+        return null;
+    }
+}
