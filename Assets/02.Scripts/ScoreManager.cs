@@ -14,6 +14,8 @@ public class ScoreManager : MonoBehaviour
     private int _bestScore;
     private int _currentScore = 0;
 
+    public int Score => _currentScore;
+
     // 저장키
     private const string SaveKey = "BestScore";
 
@@ -43,6 +45,12 @@ public class ScoreManager : MonoBehaviour
             _bestScore = PlayerPrefs.GetInt(SaveKey);
         }
 
+        Refresh();
+    }
+
+    public void SpendScore(int amonut)
+    {
+        _currentScore -= amonut;
         Refresh();
     }
 
