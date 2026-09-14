@@ -59,7 +59,6 @@ public class PlayerMove : MonoBehaviour
         float h = Input.GetAxisRaw("Horizontal"); // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
         float v = Input.GetAxisRaw("Vertical"); // 키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
 
-
         // 2. 키보드 입력에 따라 방향을 구한다.
         // 게임에는 벡터라는 타입이 있다. 벡터는(크기와 방향을 의미한다)
         Vector2 normalizedDirection = new Vector2(h, v).normalized; // 왼쪽 방향
@@ -68,7 +67,8 @@ public class PlayerMove : MonoBehaviour
         _animator.SetInteger("x", (int)normalizedDirection.x);
 
         // 3. 방향과 속도에 따라 이동한다.
-        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * _speed * Time.deltaTime;
+        float finalSpeed = _speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+        Vector2 newPosition = transform.position + (Vector3)normalizedDirection * finalSpeed * Time.deltaTime;
 
         // 4. 위치 y에 제한이 있다.
         if (newPosition.y > maxPositionY)
@@ -79,7 +79,6 @@ public class PlayerMove : MonoBehaviour
         {
             newPosition.y = minPositionY;
         }
-
 
         // 5. 양 옆 끝으로 가면 반대쪽 방향으로 이동
         if (newPosition.x > maxPositionX)

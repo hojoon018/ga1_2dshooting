@@ -102,7 +102,8 @@ public class PlayerFire : MonoBehaviour
         if (_currentCoolTime <= 0)
         {
             canFire = true;
-            _currentCoolTime = coolTime;
+            float finalFireRate = coolTime - UpgradeManager.Instance.Upgrades[1].CurrentValue;
+            _currentCoolTime = finalFireRate;
         }
     }
 

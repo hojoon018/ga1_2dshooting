@@ -55,7 +55,8 @@ public class Bullet : MonoBehaviour
             // 결합도는 묻는거.. 매번 묻는거..
             // 무적모드 검사하고
             // 방어력 검사..
-            enemy.TakeDamage(BulletDamage);
+            int finalDamage = (int)BulletDamage + (int)UpgradeManager.Instance.Upgrades[0].CurrentValue;
+            enemy.TakeDamage(finalDamage);
         }
     }
 
