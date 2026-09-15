@@ -11,7 +11,7 @@ public class PlayerBomb : MonoBehaviour
     private void Update()
     {
         _coolTimer += Time.deltaTime;
-        if (SimpleInput.GetButton("Bomb") && _coolTimer >= _coolTime)
+        if (SimpleInput.GetKeyDown(KeyCode.B) && _coolTimer >= _coolTime)
         {
             _coolTimer = 0f;
 

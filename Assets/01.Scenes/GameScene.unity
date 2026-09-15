@@ -627,9 +627,9 @@ GameObject:
   - component: {fileID: 361754656}
   - component: {fileID: 361754655}
   - component: {fileID: 361754654}
-  - component: {fileID: 361754652}
+  - component: {fileID: 361754657}
   m_Layer: 5
-  m_Name: Button
+  m_Name: BombButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,21 +655,6 @@ RectTransform:
   m_AnchoredPosition: {x: -104, y: 380}
   m_SizeDelta: {x: 132, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &361754652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361754650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 995f34434fbe45d46aacf4e120446279, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: SimpleInput.Runtime::SimpleInputNamespace.ButtonInputUI
-  button:
-    m_key: Bomb
-    value: 0
 --- !u!114 &361754654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +737,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361754650}
   m_CullTransparentMesh: 1
+--- !u!114 &361754657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361754650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d2f3cf1118bf4ab1c5f540a08bbd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SimpleInput.Runtime::SimpleInputNamespace.KeyInputUI
+  key:
+    m_key: 98
+    value: 0
 --- !u!1 &397119732
 GameObject:
   m_ObjectHideFlags: 0
