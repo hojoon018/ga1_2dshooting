@@ -3195,6 +3195,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a723cc9de7f5a845b20c225018bbbd3, type: 2}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3645,6 +3649,10 @@ PrefabInstance:
       propertyPath: _spawnDataTable
       value: 
       objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a723cc9de7f5a845b20c225018bbbd3, type: 2}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
@@ -4253,6 +4261,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: faae71b55e90d9a4786397d7236a323c, type: 2}
     - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
+      propertyPath: _balanceDataTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 7a723cc9de7f5a845b20c225018bbbd3, type: 2}
+    - target: {fileID: 8259404734828180107, guid: c961d037535ae3b458bcd3d737fa14a0, type: 3}
       propertyPath: _spawnDatas.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4328,7 +4340,7 @@ SceneRoots:
   - {fileID: 23695009}
   - {fileID: 714970016}
   - {fileID: 1351855765}
-  - {fileID: 684658187}
   - {fileID: 993353139}
   - {fileID: 1116639842}
+  - {fileID: 684658187}
   - {fileID: 970847786}
