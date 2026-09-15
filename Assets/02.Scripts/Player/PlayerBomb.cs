@@ -11,12 +11,17 @@ public class PlayerBomb : MonoBehaviour
     private void Update()
     {
         _coolTimer += Time.deltaTime;
-        if (Input.GetKeyDown(KeyCode.B) && _coolTimer >= _coolTime)
+        if (SimpleInput.GetButton("Bomb") && _coolTimer >= _coolTime)
         {
             _coolTimer = 0f;
 
-            Instantiate(_bombPrefab);
-            _bombPrefab.transform.position = _bombPosition.position;
+            Bomb();
         }
+    }
+
+    private void Bomb()
+    {
+        Instantiate(_bombPrefab);
+        _bombPrefab.transform.position = _bombPosition.position;
     }
 }
