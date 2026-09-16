@@ -1,0 +1,31 @@
+{
+    "asset": "d2e4e89a3c728544abf08f8383046968",
+    "fileName": "01a0a7e6-50fc-7c40-851c-0b15bec2ede8.png",
+    "prompt": "Cute 16-bit retro arcade pixel art UI button icon for 'AUTO' combat OFF state. Matching style with ON button, muted slate gray and cool silver palette, dimmed sleep indicator, bold pixel typography 'AUTO', clean crisp pixel art edges, isolated on white background.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
